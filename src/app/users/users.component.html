@@ -1,0 +1,22 @@
+<h3>User List</h3>
+<table class="table table-borderd" style="margin: 0px 150px 0px 150px;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Type</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList">
+            <td>{{user.id}}</td>
+            <td>{{user.employee_name}}</td>
+            <td>{{user.employee_age}}</td>
+            <td>{{user.employee_age | agetype}}</td>
+            <td>{{user.employee_salary}}</td>
+        </tr>
+    </tbody>
+</table>
+<app-paginator *ngIf="totalRecords" [totalRecords]="totalRecords" [perPage]="perPage" [currentPage]="currentPage" (onCountChange)="onCountChange($event)" (onPPChange)="onPPChange($event)"></app-paginator>

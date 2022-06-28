@@ -1,0 +1,13 @@
+<select name="perPage" (change)="onCountChange($event)">
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+</select>
+<span *ngIf="cPage > 1" (click)="onPPChange(1)"> << </span>
+<span *ngIf="cPage > 1" (click)="onPPChange(cPage-1)"> < </span>
+<span>{{cPage}}</span>
+<span *ngIf="cPage < lastPage" (click)="onPPChange(cPage+1)"> > </span>
+<span *ngIf="cPage < lastPage" (click)="onPPChange(lastPage)"> >></span>
+<br/>
+<p>Total Records : {{tRecords}}</p>
